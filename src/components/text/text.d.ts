@@ -1,3 +1,3 @@
 export interface Props {
-    size: 'sm' | 'md' | 'lg';
+    size?: 'sm' | 'md' | 'lg';
 };

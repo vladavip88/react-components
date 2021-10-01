@@ -6,6 +6,7 @@ import {
     Input,
     InputGeneral,
     Text,
+    Textarea,
     Theme,
 } from './theme.d';
 import { lighten, darken } from 'polished';
@@ -117,6 +118,13 @@ export const text: Text = {
     color: colors.text,
 };
 
+export const textarea: Textarea = {
+    ...inputGeneral,
+    paddingVertical: '16px',
+    paddingHorizontal: '12px',
+    minHeight: '120px',
+}
+
 // Theme
 const theme: Theme = {
     breakPoints: {
@@ -136,6 +144,7 @@ const theme: Theme = {
     icon,
     input,
     text,
+    textarea,
 }
 
 export default theme;

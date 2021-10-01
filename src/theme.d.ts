@@ -80,6 +80,7 @@ export interface Input extends InputGeneral {
     paddingHorizontal: string
 }
 
+
 export interface Text {
     fontSize: {
         sm: string;
@@ -87,6 +88,13 @@ export interface Text {
         lg: string;
     };
     color: string;
+}
+
+
+export interface Textarea extends InputGeneral {
+    paddingVertical: string;
+    paddingHorizontal: string;
+    minHeight: string;
 }
 
 // Theme
@@ -99,4 +107,5 @@ export interface Theme {
     icon: Icon;
     input: Input;
     text: Text;
+    textarea: Textarea;
 }

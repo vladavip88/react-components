@@ -1,6 +1,4 @@
-import { HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
-import { lighten, darken } from 'polished';
 
 // Ui
 import { IconUi } from '../icon/icon.ui';
@@ -8,7 +6,7 @@ import { IconUi } from '../icon/icon.ui';
 // Interfaces
 import { Props } from './alert.d';
 
-export const AlertUi = styled.div<HTMLAttributes<HTMLDivElement> & Props>`
+export const AlertUi = styled.div<Props>`
     align-items: center;
     box-sizing: border-box;
     border-radius: ${({ theme }) => theme.alert.borderRadius};
@@ -16,46 +14,46 @@ export const AlertUi = styled.div<HTMLAttributes<HTMLDivElement> & Props>`
     display: flex;
     font-size: ${({ theme }) => theme.alert.fontSize};
     justify-content: flex-start;
-    line-height: 1.25rem;
+    line-height: 1.125rem;
     padding: 12px 16px;
     
     ${({ theme, type, solid }) => type === 'success' && css`
-        background-color: ${lighten(solid ? 0 : 0.425, theme.alert.colorSuccess)};
-        border-color: ${theme.alert.colorSuccess};
-        color: ${solid ? theme.colors.white : darken(0.1, theme.alert.colorSuccess)};
+        background-color: ${theme.alert[solid ? 'solid' : 'default'].backgroundColorSuccess};
+        border-color: ${theme.alert[solid ? 'solid' : 'default'].colorSuccess};
+        color: ${theme.alert[solid ? 'solid' : 'default'].colorSuccess};
     
         ${IconUi} {
-            fill: ${solid ? theme.colors.white : darken(0.1, theme.alert.colorSuccess)};
+            fill: ${theme.alert[solid ? 'solid' : 'default'].colorSuccess};
         }
     `};
 
     ${({ theme, type, solid }) => type === 'warning' && css`
-        background-color: ${lighten(solid ? 0 : 0.425, theme.alert.colorWarning)};
-        border-color: ${theme.alert.colorWarning};
-        color: ${solid ? theme.colors.white : darken(0.1, theme.alert.colorWarning)};
+        background-color: ${theme.alert[solid ? 'solid' : 'default'].backgroundColorWarning};
+        border-color: ${theme.alert[solid ? 'solid' : 'default'].colorWarning};
+        color: ${theme.alert[solid ? 'solid' : 'default'].colorWarning};
     
         ${IconUi} {
-            fill: ${solid ? theme.colors.white : darken(0.1, theme.alert.colorWarning)};
+            fill: ${theme.alert[solid ? 'solid' : 'default'].colorWarning};
         }
     `};
 
     ${({ theme, type, solid }) => type === 'info' && css`
-        background-color: ${lighten(solid ? 0 : 0.425, theme.alert.colorInfo)};
-        border-color: ${theme.alert.colorInfo};
-        color: ${solid ? theme.colors.white : darken(0.1, theme.alert.colorInfo)};
+        background-color: ${theme.alert[solid ? 'solid' : 'default'].backgroundColorInfo};
+        border-color: ${theme.alert[solid ? 'solid' : 'default'].colorInfo};
+        color: ${theme.alert[solid ? 'solid' : 'default'].colorInfo};
 
         ${IconUi} {
-            fill: ${solid ? theme.colors.white : darken(0.1, theme.alert.colorInfo)};
+            fill: ${theme.alert[solid ? 'solid' : 'default'].colorInfo};
         }
     `};
 
     ${({ theme, type, solid }) => type === 'danger' && css`
-        background-color: ${lighten(solid ? 0 : 0.3, theme.alert.colorDanger)};
-        border-color: ${theme.alert.colorDanger};
-        color: ${solid ? theme.colors.white : darken(0.1, theme.alert.colorDanger)};
+        background-color: ${theme.alert[solid ? 'solid' : 'default'].backgroundColorDanger};
+        border-color: ${theme.alert[solid ? 'solid' : 'default'].colorDanger};
+        color: ${theme.alert[solid ? 'solid' : 'default'].colorDanger};
     
         ${IconUi} {
-            fill: ${solid ? theme.colors.white : darken(0.1, theme.alert.colorDanger)};
+            fill: ${theme.alert[solid ? 'solid' : 'default'].colorDanger};
         }
     `};
 

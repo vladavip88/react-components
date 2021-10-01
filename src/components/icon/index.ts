@@ -1,2 +1,2 @@
 export { default } from './Icon';
-export { Props } from './icon.d';
+export { Props as IconProps } from './icon.d';

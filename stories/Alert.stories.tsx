@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Alert, { Props } from '../src/components/alert';
+import Alert, { AlertProps } from '../src/components/alert';
 
 const meta: Meta = {
     title: 'Alert',
@@ -19,7 +19,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<Props> = args => (
+const Template: Story<AlertProps> = args => (
     <div style={{ display: 'flex', flexDirection: 'column', rowGap: '1rem' }}>
         <Alert {...args} type="success" />
         <Alert {...args} type="info" />

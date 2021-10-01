@@ -1,2 +1,2 @@
 export { default } from './Text';
-export { Props } from './text.d';
+export { Props as TextProps } from './text.d';

@@ -24,6 +24,7 @@ const Alert: React.FC<Props> = ({
         {closable && (
             <Icon
                 name="Close"
+                size={18}
                 onClick={onClose}
             />
         )}

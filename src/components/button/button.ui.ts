@@ -1,11 +1,11 @@
-import { HTMLAttributes } from 'react';
+
 import styled, { css } from 'styled-components';
 
 // Interfaces
 import { Theme } from '../../theme.d';
 import { Props } from './button.d';
 
-export const ButtonUi = styled.button<HTMLAttributes<HTMLParagraphElement> & Props & {
+export const ButtonUi = styled.button<Props & {
     theme: Theme
 }>`
     align-items: center;
@@ -16,8 +16,8 @@ export const ButtonUi = styled.button<HTMLAttributes<HTMLParagraphElement> & Pro
     display: inline-flex;
     font-size: 1rem;
     justify-content: center;
-    line-height: 1.25rem;
-    padding: 12px 30px;
+    line-height: 1.125rem;
+    padding: ${({ theme }) => `${theme.button.paddingHorizontal} ${theme.button.paddingVertical}`};
 
     ${({ buttonType, ghost, theme }) => buttonType === 'primary' && css`
         background-color: ${ghost ? 'transparent' : theme.button.primary.backgroundColor};

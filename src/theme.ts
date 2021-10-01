@@ -1,4 +1,14 @@
-import { Theme, Button, Colors, Text, Alert, Icon } from './theme.d';
+import {
+    Alert,
+    Button,
+    Colors,
+    Icon,
+    Input,
+    InputGeneral,
+    Text,
+    Theme,
+} from './theme.d';
+import { lighten, darken } from 'polished';
 
 // General
 export const colors: Colors = {
@@ -29,20 +39,39 @@ export const colors: Colors = {
     warning: '#ff9900',
     info: '#03a8f4',
     white: '#FFFFFF',
+    text: '#212529'
 }
 
 // Components
 export const alert: Alert = {
     borderRadius: '5px',
-    colorSuccess: colors.success,
-    colorInfo: colors.info,
-    colorWarning: colors.warning,
-    colorDanger: colors.danger,
+    default: {
+        backgroundColorSuccess: lighten(0.425, colors.success),
+        backgroundColorInfo: lighten(0.425, colors.info),
+        backgroundColorWarning: lighten(0.425, colors.warning),
+        backgroundColorDanger: lighten(0.3, colors.danger),
+        colorSuccess: darken(0.1, colors.success),
+        colorInfo: darken(0.1, colors.info),
+        colorWarning: darken(0.1, colors.warning),
+        colorDanger: darken(0.1, colors.danger),
+    },
+    solid: {
+        backgroundColorSuccess: colors.success,
+        backgroundColorInfo: colors.info,
+        backgroundColorWarning: colors.warning,
+        backgroundColorDanger: colors.danger,
+        colorSuccess: colors.white,
+        colorInfo: colors.white,
+        colorWarning: colors.white,
+        colorDanger: colors.white,
+    },
     fontSize: '0.875rem',
 };
 
 export const button: Button = {
     borderRadius: '5px',
+    paddingVertical: '30px',
+    paddingHorizontal: '12px',
     primary: {
         backgroundColor: colors.primary['500' as keyof {}],
         backgroundColorHover: colors.primary['600' as keyof {}],
@@ -59,8 +88,25 @@ export const button: Button = {
 
 export const icon: Icon = {
     size: 20,
-    fill: '#333333',
+    fill: colors.text,
 };
+
+export const inputGeneral: InputGeneral = {
+    borderColor: '#CED4DA',
+    borderColorFocus: colors.info,
+    borderColorError: colors.danger,
+    borderColorWarning: colors.warning,
+    borderColorSuccess: colors.success,
+    borderRadius: '5px',
+    color: colors.text,
+    colorPlaceholder: '#6C757D',
+}
+
+export const input: Input = {
+    ...inputGeneral,
+    paddingVertical: '16px',
+    paddingHorizontal: '12px',
+}
 
 export const text: Text = {
     fontSize: {
@@ -68,6 +114,7 @@ export const text: Text = {
         md: '1rem',
         lg: '1.125rem',
     },
+    color: colors.text,
 };
 
 // Theme
@@ -87,6 +134,7 @@ const theme: Theme = {
         columns: 24,
     },
     icon,
+    input,
     text,
 }
 

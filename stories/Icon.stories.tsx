@@ -5,7 +5,7 @@ import { Meta } from '@storybook/react';
 import styled from 'styled-components';
 
 // Components
-import Icon, { Props } from '../src/components/icon';
+import Icon, { IconProps } from '../src/components/icon';
 import Text from '../src/components/text';
 
 const meta: Meta = {
@@ -40,7 +40,7 @@ const Icons = [
   'Settings',
 ];
 
-export const Default = (props: Props) => Icons.map((name) => (
+export const Default = (props: IconProps) => Icons.map((name) => (
   <IconPreview key={name}>
     <Icon
       name={name}

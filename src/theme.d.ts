@@ -20,16 +20,25 @@ export interface Colors {
     warning: string;
     info: string;
     white: string;
+    text: string;
 }
 
 // Components
-export interface Alert {
-    borderRadius: string;
-    fontSize: string;
+export interface AlertType {
+    backgroundColorSuccess: string;
+    backgroundColorInfo: string;
+    backgroundColorWarning: string;
+    backgroundColorDanger: string;
     colorSuccess: string;
     colorInfo: string;
     colorWarning: string;
     colorDanger: string;
+}
+export interface Alert {
+    borderRadius: string;
+    fontSize: string;
+    default: AlertType;
+    solid: AlertType;
 };
 export interface ButtonType {
     backgroundColor: string;
@@ -40,6 +49,8 @@ export interface ButtonType {
 
 export interface Button {
     borderRadius: string;
+    paddingVertical: string
+    paddingHorizontal: string
     primary: ButtonType;
     secondary: ButtonType;
 }
@@ -53,12 +64,29 @@ export interface Icon {
     size: number;
 }
 
+export interface InputGeneral {
+    borderColor: string;
+    borderColorFocus: string;
+    borderColorError: string;
+    borderColorWarning: string;
+    borderColorSuccess: string;
+    borderRadius: string;
+    color: string;
+    colorPlaceholder: string;
+}
+
+export interface Input extends InputGeneral {
+    paddingVertical: string
+    paddingHorizontal: string
+}
+
 export interface Text {
     fontSize: {
         sm: string;
         md: string;
         lg: string;
     };
+    color: string;
 }
 
 // Theme
@@ -69,5 +97,6 @@ export interface Theme {
     colors: Colors;
     grid: Grid;
     icon: Icon;
+    input: Input;
     text: Text;
 }

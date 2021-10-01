@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Text, { Props } from '../src/components/text';
+import Text, { TextProps } from '../src/components/text';
 
 const meta: Meta = {
     title: 'Text',
@@ -19,7 +19,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<Props> = args => <Text {...args} />;
+const Template: Story<TextProps> = args => <Text {...args} />;
 
 export const Default = Template.bind({});
 
@@ -27,7 +27,7 @@ Default.args = {
     children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
 };
 
-const TemplateSize: Story<Props> = args => (
+const TemplateSize: Story<TextProps> = args => (
     <React.Fragment>
         <Text {...args} size="sm" />
         <Text {...args} size="md" />

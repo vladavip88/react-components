@@ -1,5 +1,8 @@
+
+import { HTMLAttributes } from 'react';
+
 // Container
-export interface ContainerProps {
+export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
     fluid?: boolean;
 }
 // Row
@@ -18,7 +21,7 @@ interface RowFormattedGutter {
 
 type RowGutter = number | [number, number] | RowBreakpointValues;
 
-export interface RowProps {
+export interface RowProps extends HTMLAttributes<HTMLDivElement> {
     gutter?: RowGutter;
 }
 
@@ -28,7 +31,7 @@ export interface ColBreakpointValues {
     offset?: number
 }
 
-export interface ColProps {
+export interface ColProps extends HTMLAttributes<HTMLDivElement> {
     offset?: number;
     xs?: number | ColBreakpointValues;
     sm?: number | ColBreakpointValues;

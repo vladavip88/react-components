@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { HTMLAttributes } from 'react';
 
 // Helpers
 import { generateRowVerticalGutter, generateRowHorizontalGutter, generateColumnWidth, generateColumnOffset } from './grid.ui.helpers';
@@ -15,7 +14,7 @@ import {
 
 
 // Container
-export const ContainerUi = styled.div<HTMLAttributes<HTMLDivElement> & ContainerProps>`
+export const ContainerUi = styled.div<ContainerProps>`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -45,7 +44,7 @@ export const ContainerUi = styled.div<HTMLAttributes<HTMLDivElement> & Container
 `;
 
 // Row
-export const RowUi = styled.div<HTMLAttributes<HTMLDivElement> & RowProps & {
+export const RowUi = styled.div<RowProps & {
     horizontalGutter: number | RowFormattedGutter | undefined;
     verticalGutter: number | RowFormattedGutter | undefined;
 }>`
@@ -107,7 +106,7 @@ const generateColumnGutter = ({
     return;
 }
 
-export const ColUi = styled.div<HTMLAttributes<HTMLDivElement> & ColProps & {
+export const ColUi = styled.div<ColProps & {
     gutter?: number;
     theme: Theme;
 }>`

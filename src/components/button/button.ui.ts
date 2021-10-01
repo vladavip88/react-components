@@ -1,10 +1,10 @@
-
 import styled, { css } from 'styled-components';
 
 // Interfaces
 import { Theme } from '../../theme.d';
 import { Props } from './button.d';
 
+// eslint-disable-next-line import/prefer-default-export
 export const ButtonUi = styled.button<Props & {
     theme: Theme
 }>`

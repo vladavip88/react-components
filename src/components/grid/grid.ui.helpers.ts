@@ -28,8 +28,8 @@ export const generateRowVerticalGutter = ({
         `;
     }
 
-    return;
-}
+    return undefined;
+};
 
 export const generateRowHorizontalGutter = ({
     gutter,
@@ -42,35 +42,37 @@ export const generateRowHorizontalGutter = ({
         return css`
             row-gap: ${gutter}px;
         `;
-    } else if (typeof gutter === 'object' && gutter[size as keyof {}]) {
+    }
+
+    if (typeof gutter === 'object' && gutter[size as keyof {}]) {
         return css`
             row-gap: ${gutter[size as keyof {}]}px;
         `;
     }
 
-    return;
-}
+    return undefined;
+};
 
 export const generateColumnWidth = ({
     size,
-    theme
+    theme,
 }: {
     size: number | ColBreakpointValues | undefined,
     theme: Theme,
 }) => {
     if (typeof size === 'number') {
         return `width: ${100 / (theme.grid.columns / size)}%`;
-    } else if (typeof size === 'object' && size.span && typeof size.span === 'number') {
+    } if (typeof size === 'object' && size.span && typeof size.span === 'number') {
         return `width: ${100 / (theme.grid.columns / size.span)}%`;
     }
 
-    return;
-}
+    return undefined;
+};
 
 export const generateColumnOffset = ({
     offset,
     size,
-    theme
+    theme,
 }: {
     offset: number | undefined,
     size: number | ColBreakpointValues | undefined,
@@ -78,9 +80,9 @@ export const generateColumnOffset = ({
 }) => {
     if (typeof offset === 'number') {
         return `margin-left: ${100 / (theme.grid.columns / offset)}%`;
-    } else if (typeof size === 'object' && size.offset && typeof size.offset === 'number') {
+    } if (typeof size === 'object' && size.offset && typeof size.offset === 'number') {
         return `margin-left: ${100 / (theme.grid.columns / size.offset)}%`;
     }
 
-    return;
-}
+    return undefined;
+};

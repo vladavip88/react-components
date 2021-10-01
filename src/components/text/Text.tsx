@@ -6,7 +6,6 @@ import { TextUi } from './text.ui';
 // Interface
 import { Props } from './text.d';
 
-
 const Text: React.FC<Props> = ({
     children,
     size = 'md',

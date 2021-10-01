@@ -9,17 +9,8 @@ import Icon, { IconProps } from '../src/components/icon';
 import Text from '../src/components/text';
 
 const meta: Meta = {
-  title: 'Icon',
-  component: Icon,
-  argTypes: {
-    fill: {
-      control: { type: 'text' },
-    },
-    size: {
-      control: { type: 'number' },
-      defaultValue: 24,
-    },
-  },
+    component: Icon,
+    title: 'Icon',
 };
 
 export default meta;
@@ -31,21 +22,21 @@ const IconPreview = styled.span`
 `;
 
 const Icons = [
-  'Close',
-  'Download',
-  'DragHandler',
-  'MinusCircle',
-  'PlusCircle',
-  'Search',
-  'Settings',
+    'Close',
+    'Download',
+    'DragHandler',
+    'MinusCircle',
+    'PlusCircle',
+    'Search',
+    'Settings',
 ];
 
 export const Default = (props: IconProps) => Icons.map((name) => (
-  <IconPreview key={name}>
-    <Icon
-      name={name}
-      {...props}
-    />
-    <Text size="sm">{name}</Text>
-  </IconPreview>
+    <IconPreview key={name}>
+        <Icon
+            name={name}
+            {...props}
+        />
+        <Text size="sm">{name}</Text>
+    </IconPreview>
 ));

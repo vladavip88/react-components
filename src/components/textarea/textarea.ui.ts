@@ -1,8 +1,9 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 // Interfaces
 import { Props } from './textarea.d';
 
+// eslint-disable-next-line import/prefer-default-export
 export const TextareaUi = styled.textarea<Props>`
     background-color: #FFFFFF;
     border: 1px solid ${({ theme }) => theme.textarea.borderColor};
@@ -13,7 +14,7 @@ export const TextareaUi = styled.textarea<Props>`
     font-size: 1rem;
     line-height: 1.125rem;
     padding: ${({ theme }) => `${theme.textarea.paddingHorizontal} ${theme.textarea.paddingVertical}`};
-    resize: ${({ resizable }) => resizable ? 'auto' : 'none'};
+    resize: ${({ resizable }) => (resizable ? 'auto' : 'none')};
     width: 100%;
 
     &:focus {

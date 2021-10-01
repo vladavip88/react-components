@@ -6,6 +6,7 @@ import { IconUi } from '../icon/icon.ui';
 // Interfaces
 import { Props } from './alert.d';
 
+// eslint-disable-next-line import/prefer-default-export
 export const AlertUi = styled.div<Props>`
     align-items: center;
     box-sizing: border-box;

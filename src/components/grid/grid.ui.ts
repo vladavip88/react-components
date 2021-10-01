@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
 
 // Helpers
-import { generateRowVerticalGutter, generateRowHorizontalGutter, generateColumnWidth, generateColumnOffset } from './grid.ui.helpers';
+import {
+    generateRowVerticalGutter,
+    generateRowHorizontalGutter,
+    generateColumnWidth,
+    generateColumnOffset,
+} from './grid.ui.helpers';
 
 // Interfaces
 import { Theme } from '../../theme.d';
@@ -9,9 +14,8 @@ import {
     ContainerProps,
     RowProps,
     ColProps,
-    RowFormattedGutter
+    RowFormattedGutter,
 } from './grid.d';
-
 
 // Container
 export const ContainerUi = styled.div<ContainerProps>`
@@ -96,15 +100,15 @@ const generateColumnGutter = ({
             padding-left: ${gutter / 2}px;
             padding-right: ${gutter / 2}px;
         `;
-    } else if (typeof gutter === 'object' && gutter[size as keyof {}]) {
+    } if (typeof gutter === 'object' && gutter[size as keyof {}]) {
         return css`
             padding-left: ${gutter[size as keyof {}] / 2}px;
             padding-right: ${gutter[size as keyof {}] / 2}px;
         `;
     }
 
-    return;
-}
+    return undefined;
+};
 
 export const ColUi = styled.div<ColProps & {
     gutter?: number;
@@ -112,38 +116,40 @@ export const ColUi = styled.div<ColProps & {
 }>`
     box-sizing: border-box;
     
-    ${({ theme, gutter, offset, xs, sm, md, lg, xl, xxl }) => css`
-        ${generateColumnWidth({ theme, size: xs } || 'width: 100%')};
-        ${generateColumnOffset({ theme, offset, size: xs })};
+    ${({
+        theme, gutter, offset, xs, sm, md, lg, xl, xxl,
+    }) => css`
+        ${generateColumnWidth({ size: xs, theme } || 'width: 100%')};
+        ${generateColumnOffset({ offset, size: xs, theme })};
         ${generateColumnGutter({ gutter, size: 'xs' })};
 
         @media screen and (min-width: ${theme.breakPoints.sm}) {
-            ${generateColumnWidth({ theme, size: sm })};
-            ${generateColumnOffset({ theme, offset, size: sm })};
+            ${generateColumnWidth({ size: sm, theme })};
+            ${generateColumnOffset({ offset, size: sm, theme })};
             ${generateColumnGutter({ gutter, size: 'sm' })};
         }
 
         @media screen and (min-width: ${theme.breakPoints.md}) {
-            ${generateColumnWidth({ theme, size: md })};
-            ${generateColumnOffset({ theme, offset, size: md })};
+            ${generateColumnWidth({ size: md, theme })};
+            ${generateColumnOffset({ offset, size: md, theme })};
             ${generateColumnGutter({ gutter, size: 'md' })};
         }
 
         @media screen and (min-width: ${theme.breakPoints.lg}) {
-            ${generateColumnWidth({ theme, size: lg })};
-            ${generateColumnOffset({ theme, offset, size: lg })};
+            ${generateColumnWidth({ size: lg, theme })};
+            ${generateColumnOffset({ offset, size: lg, theme })};
             ${generateColumnGutter({ gutter, size: 'lg' })};
         }
 
         @media screen and (min-width: ${theme.breakPoints.xl}) {
-            ${generateColumnWidth({ theme, size: xl })};
-            ${generateColumnOffset({ theme, offset, size: xl })};
+            ${generateColumnWidth({ size: xl, theme })};
+            ${generateColumnOffset({ offset, size: xl, theme })};
             ${generateColumnGutter({ gutter, size: 'xl' })};
         }
 
         @media screen and (min-width: ${theme.breakPoints.xxl}) {
-            ${generateColumnWidth({ theme, size: xxl })};
-            ${generateColumnOffset({ theme, offset, size: xxl })};
+            ${generateColumnWidth({ size: xxl, theme })};
+            ${generateColumnOffset({ offset, size: xxl, theme })};
             ${generateColumnGutter({ gutter, size: 'xxl' })};
         }
     `};

@@ -4,7 +4,7 @@ import {
     RowFormattedGutter,
 } from './grid.d';
 
-
+// eslint-disable-next-line import/prefer-default-export
 export const formatGutter = (gutter: RowGutter | undefined) => {
     let verticalGutter: number | RowFormattedGutter = 0;
     let horizontalGutter: number | RowFormattedGutter = 0;
@@ -31,13 +31,12 @@ export const formatGutter = (gutter: RowGutter | undefined) => {
                     // @ts-ignore
                     horizontalGutter[key as keyof {}] = value[1] || 0;
                 }
-            }
+            },
         );
     }
 
     return {
-        verticalGutter,
         horizontalGutter,
+        verticalGutter,
     };
 };
-

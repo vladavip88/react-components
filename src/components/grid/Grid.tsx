@@ -24,8 +24,8 @@ const Row: React.FC<RowProps> = ({
 
     return (
         <RowUi
-            verticalGutter={verticalGutter}
             horizontalGutter={horizontalGutter}
+            verticalGutter={verticalGutter}
             {...restProps}
         >
             {React.Children.map(children, (child) => {
@@ -36,7 +36,7 @@ const Row: React.FC<RowProps> = ({
                 return null;
             })}
         </RowUi>
-    )
+    );
 };
 
 // Col

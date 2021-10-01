@@ -1,8 +1,9 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 // Interfaces
 import { Props } from './input.d';
 
+// eslint-disable-next-line import/prefer-default-export
 export const InputUi = styled.input<Props>`
     background-color: #FFFFFF;
     border: 1px solid ${({ theme }) => theme.input.borderColor};

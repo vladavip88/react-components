@@ -3,27 +3,20 @@ import { Meta, Story } from '@storybook/react';
 import Button, { ButtonProps } from '../src/components/button';
 
 const meta: Meta = {
-    title: 'Button',
     component: Button,
-    argTypes: {
-        children: {
-            control: {
-                type: 'text',
-            },
-        },
-    },
     parameters: {
         controls: { expanded: true },
     },
+    title: 'Button',
 };
 
 export default meta;
 
-const Template: Story<ButtonProps> = args => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    children: 'Click Me'
+    children: 'Click Me',
 };
 
 export const PrimaryRounded = Template.bind({});
@@ -35,7 +28,7 @@ PrimaryRounded.args = {
 export const PrimaryGhost = Template.bind({});
 PrimaryGhost.args = {
     children: 'Click Me',
-    ghost: true
+    ghost: true,
 };
 
 export const PrimaryGhostRounded = Template.bind({});
@@ -47,28 +40,28 @@ PrimaryGhostRounded.args = {
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+    buttonType: 'secondary',
     children: 'Click Me',
-    buttonType: 'secondary'
 };
 
 export const SecondaryRounded = Template.bind({});
 SecondaryRounded.args = {
-    children: 'Click Me',
     buttonType: 'secondary',
+    children: 'Click Me',
     rounded: true,
 };
 
 export const SecondaryGhost = Template.bind({});
 SecondaryGhost.args = {
-    children: 'Click Me',
     buttonType: 'secondary',
-    ghost: true
+    children: 'Click Me',
+    ghost: true,
 };
 
 export const SecondaryGhostRounded = Template.bind({});
 SecondaryGhostRounded.args = {
-    children: 'Click Me',
     buttonType: 'secondary',
+    children: 'Click Me',
     ghost: true,
     rounded: true,
 };

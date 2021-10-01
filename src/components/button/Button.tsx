@@ -17,6 +17,6 @@ const Button: React.FC<Props> = ({
     >
         {children}
     </ButtonUi>
-)
+);
 
 export default Button;

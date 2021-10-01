@@ -7,7 +7,10 @@ import { Props } from './input.d';
 import { InputUi } from './input.ui';
 
 const Input: React.FC<Props> = (props) => (
-    <InputUi {...props} type="input" />
+    <InputUi
+        {...props}
+        type="input"
+    />
 );
 
 export default Input;

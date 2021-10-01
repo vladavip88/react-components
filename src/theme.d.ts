@@ -39,7 +39,7 @@ export interface Alert {
     fontSize: string;
     default: AlertType;
     solid: AlertType;
-};
+}
 export interface ButtonType {
     backgroundColor: string;
     backgroundColorHover: string;
@@ -80,7 +80,6 @@ export interface Input extends InputGeneral {
     paddingHorizontal: string
 }
 
-
 export interface Text {
     fontSize: {
         sm: string;
@@ -89,7 +88,6 @@ export interface Text {
     };
     color: string;
 }
-
 
 export interface Textarea extends InputGeneral {
     paddingVertical: string;

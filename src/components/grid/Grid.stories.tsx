@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Grid from '../src/components/grid';
+import Grid from './index';
 
 const meta: Meta = {
     component: Grid,

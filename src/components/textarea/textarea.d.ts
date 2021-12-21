@@ -1,6 +1,6 @@
-import { HTMLAttributes } from 'react';
+import { InputHTMLAttributes } from 'react';
 
-export interface Props extends HTMLAttributes<HTMLTextAreaElement> {
+export interface Props extends InputHTMLAttributes<HTMLTextAreaElement> {
     error: boolean;
     success: boolean;
     warning: boolean;

@@ -4,9 +4,9 @@ import React from 'react';
 import { IconUi } from '../icon.ui';
 
 // Interfaces
-import { IconProps } from '../icon.d';
+import { Props } from '../icon.d';
 
-const SearchIcon: React.FC<IconProps> = (props) => (
+const SearchIcon: React.FC<Props> = (props) => (
     <IconUi {...props}>
         <path
             d="M0 0h24v24H0z"

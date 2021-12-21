@@ -1,8 +1,10 @@
 import { lighten, darken } from 'polished';
 import {
     Alert,
+    Badge,
     Button,
     Colors,
+    Heading,
     Icon,
     Input,
     InputGeneral,
@@ -69,6 +71,16 @@ export const alert: Alert = {
     },
 };
 
+export const badge: Badge = {
+    colorDanger: colors.danger,
+    colorInfo: colors.info,
+    colorSuccess: colors.success,
+    colorWarning: colors.warning,
+    fontSize: '0.75rem',
+    height: '20px',
+    paddingVertical: '0.375rem',
+};
+
 export const button: Button = {
     borderRadius: '5px',
     paddingHorizontal: '12px',
@@ -84,6 +96,26 @@ export const button: Button = {
         backgroundColorActive: colors.secondary['700' as keyof {}],
         backgroundColorHover: colors.secondary['600' as keyof {}],
         color: colors.white,
+    },
+};
+
+export const heading: Heading = {
+    color: colors.text,
+    fontSize: {
+        h1: '6rem',
+        h2: '3.75rem',
+        h3: '3rem',
+        h4: '2.125rem',
+        h5: '1.5rem',
+        h6: '1.25rem',
+    },
+    lineHeight: {
+        h1: '1.167',
+        h2: '1.2',
+        h3: '1.167',
+        h4: '1.235',
+        h5: '1.334',
+        h6: '1.6',
     },
 };
 
@@ -128,6 +160,7 @@ export const textarea: Textarea = {
 // Theme
 const theme: Theme = {
     alert,
+    badge,
     breakPoints: {
         xs: '480px', // Extra small screen / phone - TODO: Should I remove this
         // eslint-disable-next-line sort-keys
@@ -144,6 +177,7 @@ const theme: Theme = {
     grid: {
         columns: 24,
     },
+    heading,
     icon,
     input,
     text,

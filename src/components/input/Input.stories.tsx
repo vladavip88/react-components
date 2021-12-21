@@ -1,18 +1,15 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Textarea, { TextareaProps } from '../src/components/textarea';
+import Input, { InputProps } from './index';
 
 const meta: Meta = {
-    component: Textarea,
-    parameters: {
-        controls: { expanded: true },
-    },
-    title: 'Textarea',
+    component: Input,
+    title: 'Input',
 };
 
 export default meta;
 
-const Template: Story<TextareaProps> = (args) => <Textarea {...args} />;
+const Template: Story<InputProps> = (args) => <Input {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -44,10 +41,4 @@ export const WithWarning = Template.bind({});
 WithWarning.args = {
     placeholder: 'This is some text',
     warning: true,
-};
-
-export const Resizable = Template.bind({});
-Resizable.args = {
-    placeholder: 'This is some text',
-    resizable: true,
 };

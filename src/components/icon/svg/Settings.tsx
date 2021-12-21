@@ -4,9 +4,9 @@ import React from 'react';
 import { IconUi } from '../icon.ui';
 
 // Interfaces
-import { IconProps } from '../icon.d';
+import { Props } from '../icon.d';
 
-const SettingsIcon: React.FC<IconProps> = (props) => (
+const SettingsIcon: React.FC<Props> = (props) => (
     <IconUi {...props}>
         <g>
             <path

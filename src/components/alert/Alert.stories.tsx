@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import Alert, { AlertProps } from '../src/components/alert';
+import Alert, { AlertProps } from './index';
 
 const meta: Meta = {
     component: Alert,

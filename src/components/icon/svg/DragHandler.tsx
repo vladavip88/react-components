@@ -4,9 +4,9 @@ import React from 'react';
 import { IconUi } from '../icon.ui';
 
 // Interfaces
-import { IconProps } from '../icon.d';
+import { Props } from '../icon.d';
 
-const DragHandlerIcon: React.FC<IconProps> = (props) => (
+const DragHandlerIcon: React.FC<Props> = (props) => (
     <IconUi {...props}>
         <path
             d="M0 0h24v24H0V0z"

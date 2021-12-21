@@ -40,6 +40,16 @@ export interface Alert {
     default: AlertType;
     solid: AlertType;
 }
+
+export interface Badge {
+    colorDanger: string;
+    colorInfo: string;
+    colorSuccess: string;
+    colorWarning: string;
+    fontSize: string;
+    height: string;
+    paddingVertical: string;
+}
 export interface ButtonType {
     backgroundColor: string;
     backgroundColorHover: string;
@@ -57,6 +67,26 @@ export interface Button {
 
 export interface Grid {
     columns: number;
+}
+
+export interface Heading {
+    fontSize: {
+        h1: string;
+        h2: string;
+        h3: string;
+        h4: string;
+        h5: string;
+        h6: string;
+    };
+    color: string;
+    lineHeight: {
+        h1: string;
+        h2: string;
+        h3: string;
+        h4: string;
+        h5: string;
+        h6: string;
+    };
 }
 
 export interface Icon {
@@ -99,9 +129,11 @@ export interface Textarea extends InputGeneral {
 export interface Theme {
     breakPoints: BreakPoints;
     alert: Alert;
+    badge: Badge;
     button: Button;
     colors: Colors;
     grid: Grid;
+    heading: Heading;
     icon: Icon;
     input: Input;
     text: Text;

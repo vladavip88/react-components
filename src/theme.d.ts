@@ -94,6 +94,21 @@ export interface Icon {
     size: number;
 }
 
+export interface IconButtonType {
+    backgroundColor: string;
+    backgroundColorHover: string;
+    backgroundColorActive: string;
+    color: string;
+}
+
+export interface IconButton {
+    borderRadius: string;
+    paddingVertical: string
+    paddingHorizontal: string
+    primary: IconButtonType;
+    secondary: IconButtonType;
+}
+
 export interface InputGeneral {
     borderColor: string;
     borderColorFocus: string;
@@ -135,6 +150,7 @@ export interface Theme {
     grid: Grid;
     heading: Heading;
     icon: Icon;
+    iconButton: IconButton;
     input: Input;
     text: Text;
     textarea: Textarea;

@@ -6,6 +6,7 @@ import {
     Colors,
     Heading,
     Icon,
+    IconButton,
     Input,
     InputGeneral,
     Text,
@@ -124,6 +125,24 @@ export const icon: Icon = {
     size: 20,
 };
 
+export const iconButton: IconButton = {
+    borderRadius: '5px',
+    paddingHorizontal: '12px',
+    paddingVertical: '12px',
+    primary: {
+        backgroundColor: colors.primary['500' as keyof {}],
+        backgroundColorActive: colors.primary['700' as keyof {}],
+        backgroundColorHover: colors.primary['600' as keyof {}],
+        color: colors.white,
+    },
+    secondary: {
+        backgroundColor: colors.secondary['500' as keyof {}],
+        backgroundColorActive: colors.secondary['700' as keyof {}],
+        backgroundColorHover: colors.secondary['600' as keyof {}],
+        color: colors.white,
+    },
+};
+
 export const inputGeneral: InputGeneral = {
     borderColor: '#CED4DA',
     borderColorError: colors.danger,
@@ -179,6 +198,7 @@ const theme: Theme = {
     },
     heading,
     icon,
+    iconButton,
     input,
     text,
     textarea,

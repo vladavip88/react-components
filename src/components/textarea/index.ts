@@ -1,2 +1,6 @@
 export { default } from './Textarea';
-export { Props as TextareaProps } from './textarea.d';
+export { default as textareaTheme } from './textarea.theme';
+export {
+    Props as TextareaProps,
+    Textarea as TextareaTheme,
+} from './textarea.d';

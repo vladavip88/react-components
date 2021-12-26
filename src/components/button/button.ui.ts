@@ -5,10 +5,10 @@ import { IconUi } from '../icon/icon.ui';
 
 // Interfaces
 import { Theme } from '../../theme.d';
-import { Props } from './button.d';
+import { ButtonUiProps } from './button.d';
 
 // eslint-disable-next-line import/prefer-default-export
-export const ButtonUi = styled.button<Props & {
+export const ButtonUi = styled.button<ButtonUiProps & {
     theme: Theme
 }>`
     align-items: center;
@@ -23,39 +23,39 @@ export const ButtonUi = styled.button<Props & {
     padding: ${({ theme }) => `${theme.button.paddingHorizontal} ${theme.button.paddingVertical}`};
 
     ${({
-        buttonType, ghost, theme, iconPosition,
+        $buttonType, $ghost, theme, $iconPosition, $link,
     }) => css`
-        background-color: ${ghost ? 'transparent' : theme.button[buttonType as keyof {}].backgroundColor};
-        border-color: ${theme.button[buttonType as keyof {}].backgroundColor};
-        color: ${ghost ? theme.button[buttonType as keyof {}].backgroundColor : theme.button[buttonType as keyof {}].color};
+        background-color: ${($ghost || $link) ? 'transparent' : theme.button[$buttonType as keyof {}].backgroundColor};
+        border-color: ${$link ? 'transparent' : theme.button[$buttonType as keyof {}].backgroundColor};
+        color: ${($ghost || $link) ? theme.button[$buttonType as keyof {}].backgroundColor : theme.button[$buttonType as keyof {}].color};
 
         ${IconUi} {
-            fill: ${ghost ? theme.button[buttonType as keyof {}].backgroundColor : theme.button[buttonType as keyof {}].color};
-            margin-left: ${iconPosition === 'right' ? '0.5rem' : 0};
-            margin-right: ${iconPosition === 'left' ? '0.5rem' : 0};
-            height: 1.25rem;
-            width: 1.25rem;
+            fill: ${($ghost || $link) ? theme.button[$buttonType as keyof {}].backgroundColor : theme.button[$buttonType as keyof {}].color};
+            margin-left: ${$iconPosition === 'right' ? '0.5rem' : 0};
+            margin-right: ${$iconPosition === 'left' ? '0.5rem' : 0};
+            height: 1.125rem;
+            width: 1.125rem;
         }
 
         &:not(:disabled):hover,
         &:not(:disabled):active {
-            color: ${theme.button[buttonType as keyof {}].color};
+            color: ${theme.button[$buttonType as keyof {}].color};
 
             ${IconUi} {
-                fill: ${theme.button[buttonType as keyof {}].color};
+                fill: ${theme.button[$buttonType as keyof {}].color};
             }
         }
 
         &:not(:disabled):hover {
-            background-color: ${theme.button[buttonType as keyof {}].backgroundColorHover};
+            background-color: ${theme.button[$buttonType as keyof {}].backgroundColorHover};
         }
 
         &:not(:disabled):active {
-            background-color: ${theme.button[buttonType as keyof {}].backgroundColorActive};
+            background-color: ${theme.button[$buttonType as keyof {}].backgroundColorActive};
         }
     `};
 
-    ${({ rounded }) => rounded && css`
+    ${({ $rounded }) => $rounded && css`
         border-radius: 99px;
     `};
 `;

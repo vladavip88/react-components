@@ -1,2 +1,3 @@
 export { default } from './Icon';
-export { Props as IconProps } from './icon.d';
+export { default as iconTheme } from './icon.theme';
+export { Props as IconProps, Icon as IconTheme } from './icon.d';

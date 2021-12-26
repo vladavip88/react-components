@@ -1,2 +1,5 @@
 export { default } from './Grid';
-export { ContainerProps, RowProps, ColProps } from './grid.d';
+export { default as gridTheme } from './grid.theme';
+export {
+    ContainerProps, RowProps, ColProps, Grid as GridTheme,
+} from './grid.d';

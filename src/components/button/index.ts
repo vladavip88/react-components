@@ -1,2 +1,6 @@
 export { default } from './Button';
-export { Props as ButtonProps } from './button.d';
+export { default as buttonTheme } from './button.theme';
+export {
+    Props as ButtonProps,
+    Button as ButtonTheme,
+} from './button.d';

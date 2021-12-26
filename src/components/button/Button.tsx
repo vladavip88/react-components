@@ -9,13 +9,20 @@ import { Props } from './button.d';
 const Button: React.FC<Props> = ({
     buttonType = 'primary',
     children,
-    icon,
+    ghost = false,
+    icon = null,
     iconPosition = 'left',
+    link = false,
+    rounded = false,
     ...restProps
 }) => (
     <ButtonUi
-        buttonType={buttonType}
-        iconPosition={iconPosition}
+        $buttonType={buttonType}
+        $ghost={ghost}
+        $icon={icon}
+        $iconPosition={iconPosition}
+        $link={link}
+        $rounded={rounded}
         {...restProps}
     >
         {iconPosition === 'left' && icon}

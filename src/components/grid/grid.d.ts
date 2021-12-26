@@ -1,5 +1,7 @@
 import { HTMLAttributes } from 'react';
 
+// Component Props
+
 // Container
 export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
     fluid?: boolean;
@@ -38,4 +40,9 @@ export interface ColProps extends HTMLAttributes<HTMLDivElement> {
     lg?: number | ColBreakpointValues;
     xl?: number | ColBreakpointValues;
     xxl?: number | ColBreakpointValues;
+}
+
+// Component Theme
+export interface Grid {
+    columns: number;
 }

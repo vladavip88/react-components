@@ -1,2 +1,6 @@
 export { default } from './IconButton';
-export { Props as IconButtonProps } from './iconButton.d';
+export { default as iconButtonTheme } from './iconButton.theme';
+export {
+    Props as IconButtonProps,
+    IconButton as IconButtonTheme,
+} from './iconButton.d';

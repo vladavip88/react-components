@@ -1,2 +1,6 @@
 export { default } from './Text';
-export { Props as TextProps } from './text.d';
+export { default as textTheme } from './text.theme';
+export {
+    Props as TextProps,
+    Text as TextTheme,
+} from './text.d';

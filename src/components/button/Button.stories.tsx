@@ -49,6 +49,18 @@ PrimaryGhostWithIcon.args = {
     icon: <Icon name="Settings" />,
 };
 
+export const PrimaryLink = Template.bind({});
+PrimaryLink.args = {
+    children: 'Click Me',
+    link: true,
+};
+export const PrimaryLinkWithIcon = Template.bind({});
+PrimaryLinkWithIcon.args = {
+    children: 'Click Me',
+    icon: <Icon name="Settings" />,
+    link: true,
+};
+
 export const PrimaryGhostRounded = Template.bind({});
 PrimaryGhostRounded.args = {
     children: 'Click Me',
@@ -104,6 +116,21 @@ SecondaryGhostWithIcon.args = {
     children: 'Click Me',
     ghost: true,
     icon: <Icon name="Settings" />,
+};
+
+export const SecondaryLink = Template.bind({});
+SecondaryLink.args = {
+    buttonType: 'secondary',
+    children: 'Click Me',
+    link: true,
+};
+
+export const SecondaryLinkWithIcon = Template.bind({});
+SecondaryLinkWithIcon.args = {
+    buttonType: 'secondary',
+    children: 'Click Me',
+    icon: <Icon name="Settings" />,
+    link: true,
 };
 
 export const SecondaryGhostRounded = Template.bind({});

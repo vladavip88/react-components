@@ -34,8 +34,8 @@ const Icons = [
 export const Default = (props: IconProps) => Icons.map((name) => (
     <IconPreview key={name}>
         <Icon
-            name={name}
             {...props}
+            name={name}
         />
         <Text size="sm">{name}</Text>
     </IconPreview>

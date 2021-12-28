@@ -30,20 +30,20 @@ WithValue.args = {
 
 export const WithError = Template.bind({});
 WithError.args = {
-    error: true,
     placeholder: 'This is some text',
+    status: 'error',
 };
 
 export const WithSuccess = Template.bind({});
 WithSuccess.args = {
     placeholder: 'This is some text',
-    success: true,
+    status: 'success',
 };
 
 export const WithWarning = Template.bind({});
 WithWarning.args = {
     placeholder: 'This is some text',
-    warning: true,
+    status: 'warning',
 };
 
 export const Resizable = Template.bind({});

@@ -4,9 +4,9 @@ import React from 'react';
 import { IconUi } from '../icon.ui';
 
 // Interfaces
-import { Props } from '../icon.d';
+import { IconProps } from '../icon.d';
 
-const DownloadIcon: React.FC<Props> = (props) => (
+const DownloadIcon: React.FC<IconProps> = (props) => (
     <IconUi {...props}>
         <g><rect
             fill="none"

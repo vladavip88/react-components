@@ -8,6 +8,7 @@ import { headingTheme } from './components/heading';
 import { iconTheme } from './components/icon';
 import { iconButtonTheme } from './components/iconButton';
 import { inputTheme } from './components/input';
+import { modalTheme } from './components/modal';
 import { textTheme } from './components/text';
 import { textareaTheme } from './components/textarea';
 
@@ -29,6 +30,7 @@ const theme: Theme = {
     icon: iconTheme,
     iconButton: iconButtonTheme,
     input: inputTheme,
+    modal: modalTheme,
     text: textTheme,
     textarea: textareaTheme,
 };

@@ -1,9 +1,9 @@
 import { COLORS } from '../../theme.constants';
 
 // Types
-import { IconButton } from './iconButton.d';
+import { IconButtonTheme } from './iconButton.d';
 
-const iconButtonTheme: IconButton = {
+const iconButtonTheme: IconButtonTheme = {
     borderRadius: '5px',
     paddingHorizontal: '12px',
     paddingVertical: '12px',

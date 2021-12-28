@@ -1,9 +1,9 @@
 import { COLORS } from '../../theme.constants';
 
 // Types
-import { Input } from './input.d';
+import { InputTheme } from './input.d';
 
-const inputTheme: Input = {
+const inputTheme: InputTheme = {
     borderColor: '#CED4DA',
     borderColorError: COLORS.danger,
     borderColorFocus: COLORS.info,

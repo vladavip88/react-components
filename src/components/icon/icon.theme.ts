@@ -1,9 +1,9 @@
 import { COLORS } from '../../theme.constants';
 
 // Types
-import { Icon } from './icon.d';
+import { IconTheme } from './icon.d';
 
-const iconTheme: Icon = {
+const iconTheme: IconTheme = {
     fill: COLORS.text,
     size: 20,
 };

@@ -1,7 +1,7 @@
 import { HTMLAttributes, ReactComponentElement } from 'react';
 
 // Component Props
-export interface Props extends HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     buttonType?: 'primary' | 'secondary';
     ghost?: boolean;
     rounded?: boolean;
@@ -18,7 +18,7 @@ export interface ButtonType {
     color: string;
 }
 
-export interface Button {
+export interface ButtonTheme {
     borderRadius: string;
     paddingVertical: string
     paddingHorizontal: string

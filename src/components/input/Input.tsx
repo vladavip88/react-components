@@ -1,14 +1,17 @@
 import React from 'react';
 
 // Interfaces
-import { Props } from './input.d';
+import { InputProps } from './input.d';
 
 // Ui
 import { InputUi } from './input.ui';
 
-const Input: React.FC<Props> = (props) => (
+const Input: React.FC<InputProps> = ({
+    status = '', ...restProps
+}) => (
     <InputUi
-        {...props}
+        {...restProps}
+        $status={status}
         type="input"
     />
 );

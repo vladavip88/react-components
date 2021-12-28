@@ -4,10 +4,14 @@ import React from 'react';
 import { HeadingUi } from './heading.ui';
 
 // Interface
-import { Props } from './heading.d';
+import { HeadingProps } from './heading.d';
 
-const Heading: React.FC<Props> = ({ children, ...restProps }) => (
-    <HeadingUi {...restProps}>{children}</HeadingUi>
+const Heading: React.FC<HeadingProps> = ({ children, level = '1', ...restProps }) => (
+    <HeadingUi
+        {...restProps}
+        $level={level}
+    >{children}
+    </HeadingUi>
 );
 
 export default Heading;

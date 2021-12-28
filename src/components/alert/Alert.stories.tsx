@@ -43,6 +43,18 @@ Solid.args = {
     children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     solid: true,
 };
+export const WithTitle = Template.bind({});
+WithTitle.args = {
+    children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    title: 'This is some title.',
+};
+
+export const WithTitleSolid = Template.bind({});
+WithTitleSolid.args = {
+    children: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    solid: true,
+    title: 'This is some title.',
+};
 
 export const Closable = Template.bind({});
 Closable.args = {

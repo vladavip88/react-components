@@ -2,9 +2,9 @@
 import { COLORS } from '../../theme.constants';
 
 // Types
-import { Badge } from './badge.d';
+import { BadgeTheme } from './badge.d';
 
-const badgeTheme: Badge = {
+const badgeTheme: BadgeTheme = {
     colorDanger: COLORS.danger,
     colorInfo: COLORS.info,
     colorSuccess: COLORS.success,

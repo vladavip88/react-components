@@ -4,16 +4,18 @@ import React from 'react';
 import { BadgeUi } from './badge.ui';
 
 // Interfaces
-import { Props } from './badge.d';
+import { BadgeProps } from './badge.d';
 
-const Badge: React.FC<Props> = ({
+const Badge: React.FC<BadgeProps> = ({
     children,
+    outlined = false,
     type = 'danger',
     ...restProps
 }) => (
     <BadgeUi
-        type={type}
         {...restProps}
+        $outlined={outlined}
+        $type={type}
     >
         {children}
     </BadgeUi>

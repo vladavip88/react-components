@@ -103,13 +103,15 @@ const Modal: React.FC<ModalProps> & {
 
     // Enable close modal on backdrop click
     useClickOutside({
-        action: () => closeOnClickOutside && onClose(),
+        action: onClose,
         ref: modalContentRef,
+        shouldEnable: closeOnClickOutside,
     });
 
     // Enable close modal on esc button
     useEscKeyAction({
-        action: () => closeOnEsc && onClose(),
+        action: onClose,
+        shouldEnable: closeOnEsc,
     });
 
     if (!shouldRender) return null;

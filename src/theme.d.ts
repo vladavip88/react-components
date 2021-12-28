@@ -6,6 +6,7 @@ import { HeadingTheme } from './components/heading';
 import { IconTheme } from './components/icon';
 import { IconButtonTheme } from './components/iconButton';
 import { InputTheme } from './components/input';
+import { ModalTheme } from './components/modal';
 import { TextTheme } from './components/text';
 import { TextareaTheme } from './components/textarea';
 
@@ -46,6 +47,7 @@ export interface Theme {
     icon: IconTheme;
     iconButton: IconButtonTheme;
     input: InputTheme;
+    modal: ModalTheme;
     text: TextTheme;
     textarea: TextareaTheme;
 }

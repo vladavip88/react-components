@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-function useClickOutside() {
+function useBodyScroll() {
     const [bodyOverflow] = useState<string>(document.body.style.overflow);
 
     /**
@@ -44,4 +44,4 @@ function useClickOutside() {
     };
 }
 
-export default useClickOutside;
+export default useBodyScroll;

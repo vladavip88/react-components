@@ -18,13 +18,20 @@ export interface ModalFooterProps extends HTMLAttributes<HTMLDivElement> {
     onConfirm?: () => void;
 }
 
+// Component Theme
+export interface ModalTheme {
+    borderRadius: string;
+    maxWidth: string;
+    minWidth: string;
+}
+
 // Component UI Props
-interface ModalBackdropProps extends HTMLAttributes<HTMLDivElement> {
+export interface ModalBackdropUiProps extends HTMLAttributes<HTMLDivElement> {
     $show: boolean;
     $transitionTime: number;
 }
 
-interface ModalContainerProps extends HTMLAttributes<HTMLDivElement> {
+export interface ModalContainerUiProps extends HTMLAttributes<HTMLDivElement> {
     $show: boolean;
     $transitionTime: number;
 }

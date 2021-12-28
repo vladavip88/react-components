@@ -1,8 +1,10 @@
 import { HTMLAttributes } from 'react';
 
+type BUTTON_TYPE = 'primary' | 'secondary';
+
 // Component Props
-export interface Props extends HTMLAttributes<HTMLButtonElement> {
-    buttonType?: 'primary' | 'secondary';
+export interface IconButtonProps extends HTMLAttributes<HTMLButtonElement> {
+    buttonType?: BUTTON_TYPE;
     ghost?: boolean;
     rounded?: boolean;
 }
@@ -15,10 +17,17 @@ export interface IconButtonType {
     color: string;
 }
 
-export interface IconButton {
+export interface IconButtonTheme {
     borderRadius: string;
     paddingVertical: string
     paddingHorizontal: string
     primary: IconButtonType;
     secondary: IconButtonType;
+}
+
+// Component Ui Props
+export interface IconButtonUiProps extends HTMLAttributes<HTMLButtonElement> {
+    $buttonType?: BUTTON_TYPE;
+    $ghost?: boolean;
+    $rounded?: boolean;
 }

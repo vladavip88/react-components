@@ -1,9 +1,9 @@
 import { COLORS } from '../../theme.constants';
 
 // Types
-import { Button } from './button.d';
+import { ButtonTheme } from './button.d';
 
-const button: Button = {
+const button: ButtonTheme = {
     borderRadius: '5px',
     paddingHorizontal: '12px',
     paddingVertical: '30px',

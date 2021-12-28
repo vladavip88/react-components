@@ -1,15 +1,15 @@
 import { InputHTMLAttributes } from 'react';
 
+type TEXTAREA_STATUS = 'error' | 'success' | 'warning' | '';
+
 // Component Props
-export interface Props extends InputHTMLAttributes<HTMLTextAreaElement> {
-    error: boolean;
-    success: boolean;
-    warning: boolean;
+export interface TextareaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
+    status: TEXTAREA_STATUS;
     resizable: boolean;
 }
 
 // Component Theme
-export interface Textarea {
+export interface TextareaTheme {
     borderColor: string;
     borderColorError: string;
     borderColorFocus: string;
@@ -21,4 +21,10 @@ export interface Textarea {
     minHeight: string;
     paddingHorizontal: string;
     paddingVertical: string;
+}
+
+// Component UI Props
+export interface TextareaUiProps extends InputHTMLAttributes<HTMLTextAreaElement> {
+    $status: TEXTAREA_STATUS;
+    $resizable: boolean;
 }

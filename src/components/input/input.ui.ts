@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
+import { startCase } from 'lodash';
 
 // Interfaces
-import { Props } from './input.d';
+import { InputUiProps } from './input.d';
 
 // eslint-disable-next-line import/prefer-default-export
-export const InputUi = styled.input<Props>`
+export const InputUi = styled.input<InputUiProps>`
     background-color: #FFFFFF;
     border: 1px solid ${({ theme }) => theme.input.borderColor};
     border-radius: ${({ theme }) => theme.input.borderRadius};
@@ -24,24 +25,10 @@ export const InputUi = styled.input<Props>`
         color: ${({ theme }) => theme.input.colorPlaceholder};
     }
 
-    ${({ error }) => error && css`
-        border-color: ${({ theme }) => theme.input.borderColorError};
+    ${({ $status }) => $status && css`
+        border-color: ${({ theme }) => theme.input[`borderColor${startCase($status)}`]};
         &:focus {
-            border-color: ${({ theme }) => theme.input.borderColorError};
-        }
-    `};
-
-    ${({ success }) => success && css`
-        border-color: ${({ theme }) => theme.input.borderColorSuccess};
-        &:focus {
-            border-color: ${({ theme }) => theme.input.borderColorSuccess};
-        }
-    `};
-
-    ${({ warning }) => warning && css`
-        border-color: ${({ theme }) => theme.input.borderColorWarning};
-        &:focus {
-            border-color: ${({ theme }) => theme.input.borderColorWarning};
+            border-color: ${({ theme }) => theme.input[`borderColor${startCase($status)}`]};
         }
     `};
 `;

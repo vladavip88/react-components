@@ -4,9 +4,9 @@ import React from 'react';
 import { ButtonUi } from './button.ui';
 
 // Interfaces
-import { Props } from './button.d';
+import { ButtonProps } from './button.d';
 
-const Button: React.FC<Props> = ({
+const Button: React.FC<ButtonProps> = ({
     buttonType = 'primary',
     children,
     ghost = false,
@@ -17,13 +17,13 @@ const Button: React.FC<Props> = ({
     ...restProps
 }) => (
     <ButtonUi
+        {...restProps}
         $buttonType={buttonType}
         $ghost={ghost}
         $icon={icon}
         $iconPosition={iconPosition}
         $link={link}
         $rounded={rounded}
-        {...restProps}
     >
         {iconPosition === 'left' && icon}
         {children}

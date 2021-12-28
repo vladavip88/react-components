@@ -4,16 +4,20 @@ import React from 'react';
 import { IconButtonUi } from './iconButton.ui';
 
 // Interfaces
-import { Props } from './iconButton.d';
+import { IconButtonProps } from './iconButton.d';
 
-const IconButton: React.FC<Props> = ({
+const IconButton: React.FC<IconButtonProps> = ({
     buttonType = 'primary',
+    ghost = false,
+    rounded = false,
     children,
     ...restProps
 }) => (
     <IconButtonUi
-        buttonType={buttonType}
         {...restProps}
+        $buttonType={buttonType}
+        $ghost={ghost}
+        $rounded={rounded}
     >
         {children}
     </IconButtonUi>

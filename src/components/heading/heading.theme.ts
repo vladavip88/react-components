@@ -1,9 +1,9 @@
 import { COLORS } from '../../theme.constants';
 
 // Types
-import { Heading } from './heading.d';
+import { HeadingTheme } from './heading.d';
 
-const headingTheme: Heading = {
+const headingTheme: HeadingTheme = {
     color: COLORS.text,
     fontSize: {
         h1: '6rem',

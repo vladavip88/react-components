@@ -4,9 +4,9 @@ import React from 'react';
 import { IconUi } from '../icon.ui';
 
 // Interfaces
-import { Props } from '../icon.d';
+import { IconProps } from '../icon.d';
 
-const MinusCircle: React.FC<Props> = (props) => (
+const MinusCircleIcon: React.FC<IconProps> = (props) => (
     <IconUi {...props}>
         <path
             d="M0 0h24v24H0V0z"
@@ -16,4 +16,4 @@ const MinusCircle: React.FC<Props> = (props) => (
     </IconUi>
 );
 
-export default MinusCircle;
+export default MinusCircleIcon;

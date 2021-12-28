@@ -5,11 +5,11 @@ import { ButtonUi } from '../button/button.ui';
 
 // Types
 import {
-    ModalBackdropProps,
-    ModalContainerProps,
+    ModalBackdropUiProps,
+    ModalContainerUiProps,
 } from './modal.d';
 
-export const ModalBackdropUi = styled.div<ModalBackdropProps>`
+export const ModalBackdropUi = styled.div<ModalBackdropUiProps>`
     background-color:  ${({ $show }) => ($show
         ? 'rgba(0,0,0, 0.5)'
         : 'transparent')};
@@ -22,7 +22,7 @@ export const ModalBackdropUi = styled.div<ModalBackdropProps>`
     z-index: 50;
 `;
 
-export const ModalContainerUi = styled.div<ModalContainerProps>`
+export const ModalContainerUi = styled.div<ModalContainerUiProps>`
     left: 50%;
     overflow-y: auto;
     position: absolute;
@@ -33,10 +33,11 @@ export const ModalContainerUi = styled.div<ModalContainerProps>`
 
 export const ModalContentUi = styled.div`
     background-color: white;
-    border-radius: 5px;
+    border-radius: ${({ theme }) => theme.modal.borderRadius};
     box-shadow: 0px 3px 10px #888888;
     width: 100%;
-    max-width: 500px;
+    min-width: ${({ theme }) => theme.modal.minWidth};
+    max-width: ${({ theme }) => theme.modal.maxWidth};
 `;
 
 export const ModalContentHeaderUi = styled.div`

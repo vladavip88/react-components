@@ -1,2 +1,6 @@
 export { default } from './Modal';
-export { ModalProps } from './modal.d';
+export { default as modalTheme } from './modal.theme';
+export {
+    ModalProps,
+    ModalTheme,
+} from './modal.d';

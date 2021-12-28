@@ -51,7 +51,7 @@ const TemplateContent: Story<ModalProps> = (args) => {
     };
 
     return (
-        <>
+        <div style={{ height: '10000px' }}>
             <button
                 type="button"
                 onClick={handleShow}
@@ -77,7 +77,7 @@ const TemplateContent: Story<ModalProps> = (args) => {
                     />
                 </Modal.Content>
             </Modal>
-        </>
+        </div>
     );
 };
 

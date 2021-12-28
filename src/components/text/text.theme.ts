@@ -1,9 +1,9 @@
 import { COLORS } from '../../theme.constants';
 
 // Types
-import { Text } from './text.d';
+import { TextTheme } from './text.d';
 
-const textTheme: Text = {
+const textTheme: TextTheme = {
     color: COLORS.text,
     fontSize: {
         lg: '1.125rem',

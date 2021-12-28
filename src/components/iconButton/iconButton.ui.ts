@@ -5,10 +5,10 @@ import { IconUi } from '../icon/icon.ui';
 
 // Interfaces
 import { Theme } from '../../theme.d';
-import { Props } from './iconButton.d';
+import { IconButtonUiProps } from './iconButton.d';
 
 // eslint-disable-next-line import/prefer-default-export
-export const IconButtonUi = styled.button<Props & {
+export const IconButtonUi = styled.button<IconButtonUiProps & {
     theme: Theme
 }>`
     align-items: center;
@@ -22,31 +22,31 @@ export const IconButtonUi = styled.button<Props & {
     line-height: 1.125rem;
     padding: ${({ theme }) => `${theme.iconButton.paddingHorizontal} ${theme.iconButton.paddingVertical}`};
 
-    ${({ buttonType, ghost, theme }) => css`
-        background-color: ${ghost ? 'transparent' : theme.iconButton[buttonType as keyof {}].backgroundColor};
-        border-color: ${theme.iconButton[buttonType as keyof {}].backgroundColor};
+    ${({ $buttonType, $ghost, theme }) => css`
+        background-color: ${$ghost ? 'transparent' : theme.iconButton[$buttonType as keyof {}].backgroundColor};
+        border-color: ${theme.iconButton[$buttonType as keyof {}].backgroundColor};
 
         ${IconUi} {
-            fill: ${ghost ? theme.iconButton[buttonType as keyof {}].backgroundColor : theme.iconButton[buttonType as keyof {}].color};
+            fill: ${$ghost ? theme.iconButton[$buttonType as keyof {}].backgroundColor : theme.iconButton[$buttonType as keyof {}].color};
             height: 1.25rem;
             width: 1.25rem;
         }
 
         &:not(:disabled):hover ${IconUi},
         &:not(:disabled):active ${IconUi}{
-            fill: ${theme.iconButton[buttonType as keyof {}].color};
+            fill: ${theme.iconButton[$buttonType as keyof {}].color};
         }
 
         &:not(:disabled):hover {
-            background-color: ${theme.iconButton[buttonType as keyof {}].backgroundColorHover};
+            background-color: ${theme.iconButton[$buttonType as keyof {}].backgroundColorHover};
         }
 
         &:not(:disabled):active {
-            background-color: ${theme.iconButton[buttonType as keyof {}].backgroundColorActive};
+            background-color: ${theme.iconButton[$buttonType as keyof {}].backgroundColorActive};
         }
     `};
 
-    ${({ rounded }) => rounded && css`
+    ${({ $rounded }) => $rounded && css`
         border-radius: 99px;
     `};
 `;

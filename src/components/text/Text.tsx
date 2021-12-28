@@ -4,16 +4,16 @@ import React from 'react';
 import { TextUi } from './text.ui';
 
 // Interface
-import { Props } from './text.d';
+import { TextProps } from './text.d';
 
-const Text: React.FC<Props> = ({
+const Text: React.FC<TextProps> = ({
     children,
     size = 'md',
     ...restProps
 }) => (
     <TextUi
-        size={size}
         {...restProps}
+        $size={size}
     >
         {children}
     </TextUi>

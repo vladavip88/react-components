@@ -1,5 +1,5 @@
 // Component Props
-export interface Props {
+export interface IconProps {
     fill?: string;
     size?: number;
     viewBox?: 'string'
@@ -8,7 +8,7 @@ export interface Props {
 }
 
 // Component Theme
-export interface Icon {
+export interface IconTheme {
     fill: string;
     size: number;
 }

@@ -4,29 +4,58 @@ import React from 'react';
 import Icon from '../icon';
 
 // Ui
-import { AlertUi } from './alert.ui';
+import {
+    AlertUi,
+    AlertContentWrapperUi,
+    AlertTitleUi,
+    AlertTextUi,
+    AlertIconUi,
+} from './alert.ui';
 
 // Interface
-import { Props } from './alert.d';
+import { AlertProps } from './alert.d';
 
-const Alert: React.FC<Props> = ({
+const Alert: React.FC<AlertProps> = ({
     children,
+    title = '',
     type = 'success',
+    solid = false,
     closable,
     onClose = () => { },
     ...restProps
 }) => (
     <AlertUi
-        type={type}
         {...restProps}
+        $solid={solid}
+        $type={type}
     >
-        {children}
+        <AlertContentWrapperUi>
+            {title && (
+                <AlertTitleUi
+                    $solid={solid}
+                    $type={type}
+                >
+                    {title}
+                </AlertTitleUi>
+            )}
+            <AlertTextUi
+                $solid={solid}
+                $type={type}
+            >
+                {children}
+            </AlertTextUi>
+        </AlertContentWrapperUi>
         {closable && (
-            <Icon
-                name="Close"
-                size={18}
-                onClick={onClose}
-            />
+            <AlertIconUi
+                $solid={solid}
+                $type={type}
+            >
+                <Icon
+                    name="Close"
+                    size={18}
+                    onClick={onClose}
+                />
+            </AlertIconUi>
         )}
     </AlertUi>
 );

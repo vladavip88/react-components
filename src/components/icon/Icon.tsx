@@ -4,9 +4,9 @@ import React, { SVGProps } from 'react';
 import * as Icons from './svg';
 
 // Interfaces
-import { Props } from './icon.d';
+import { IconProps } from './icon.d';
 
-const Icon: React.FC<Props> = ({ name, ...restProps }) => {
+const Icon: React.FC<IconProps> = ({ name, ...restProps }) => {
     const SvgIcon: React.FC<SVGProps<SVGSVGElement>> = Icons[name as keyof {}];
 
     return (

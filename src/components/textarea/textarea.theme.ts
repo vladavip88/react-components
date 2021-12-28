@@ -1,9 +1,9 @@
 import { COLORS } from '../../theme.constants';
 
 // Types
-import { Textarea } from './textarea.d';
+import { TextareaTheme } from './textarea.d';
 
-const textareaTheme: Textarea = {
+const textareaTheme: TextareaTheme = {
     borderColor: '#CED4DA',
     borderColorError: COLORS.danger,
     borderColorFocus: COLORS.info,

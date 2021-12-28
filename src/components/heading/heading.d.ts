@@ -1,12 +1,14 @@
 import { HTMLAttributes } from 'react';
 
+type HEADING_LEVEL = '1' | '2' | '3' | '4' | '5' | '6';
+
 // Component Props
-export interface Props extends HTMLAttributes<HTMLHeadingElement> {
-    level?: '1' | '2' | '3' | '4' | '5' | '6';
+export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
+    level?: HEADING_LEVEL;
 }
 
 // Component Theme
-export interface Heading {
+export interface HeadingTheme {
     fontSize: {
         h1: string;
         h2: string;
@@ -24,4 +26,9 @@ export interface Heading {
         h5: string;
         h6: string;
     };
+}
+
+// Component Ui Props
+export interface HeadingUiProps extends HTMLAttributes<HTMLHeadingElement> {
+    $level?: HEADING_LEVEL;
 }

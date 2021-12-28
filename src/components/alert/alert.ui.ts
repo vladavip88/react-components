@@ -4,61 +4,54 @@ import styled, { css } from 'styled-components';
 import { IconUi } from '../icon/icon.ui';
 
 // Interfaces
-import { Props } from './alert.d';
+import {
+    AlertUiProps,
+    AlertContentWrapperUiProps,
+    AlertTextUiProps,
+    AlertTitleUiProps,
+    AlertIconUiProps,
+} from './alert.d';
 
 // eslint-disable-next-line import/prefer-default-export
-export const AlertUi = styled.div<Props>`
-    align-items: center;
+export const AlertUi = styled.div<AlertUiProps>`
+    align-items: stretch;
     box-sizing: border-box;
     border-radius: ${({ theme }) => theme.alert.borderRadius};
     border: 1px solid transparent;
     display: flex;
     font-size: ${({ theme }) => theme.alert.fontSize};
-    justify-content: flex-start;
+    justify-content: space-between;
     line-height: 1.125rem;
     padding: 12px 16px;
     
-    ${({ theme, type, solid }) => type === 'success' && css`
-        background-color: ${theme.alert[solid ? 'solid' : 'default'].backgroundColorSuccess};
-        border-color: ${theme.alert[solid ? 'solid' : 'default'].colorSuccess};
-        color: ${theme.alert[solid ? 'solid' : 'default'].colorSuccess};
+    ${({ theme, $type, $solid }) => css`
+        background-color: ${theme.alert[$type][`backgroundColor${$solid ? 'Solid' : ''}`]};
+        border-color: ${theme.alert[$type][`color${$solid ? 'Solid' : ''}`]};
+    `};
+
     
-        ${IconUi} {
-            fill: ${theme.alert[solid ? 'solid' : 'default'].colorSuccess};
-        }
-    `};
+`;
 
-    ${({ theme, type, solid }) => type === 'warning' && css`
-        background-color: ${theme.alert[solid ? 'solid' : 'default'].backgroundColorWarning};
-        border-color: ${theme.alert[solid ? 'solid' : 'default'].colorWarning};
-        color: ${theme.alert[solid ? 'solid' : 'default'].colorWarning};
-    
-        ${IconUi} {
-            fill: ${theme.alert[solid ? 'solid' : 'default'].colorWarning};
-        }
-    `};
+export const AlertContentWrapperUi = styled.div<AlertContentWrapperUiProps>``;
 
-    ${({ theme, type, solid }) => type === 'info' && css`
-        background-color: ${theme.alert[solid ? 'solid' : 'default'].backgroundColorInfo};
-        border-color: ${theme.alert[solid ? 'solid' : 'default'].colorInfo};
-        color: ${theme.alert[solid ? 'solid' : 'default'].colorInfo};
+export const AlertTitleUi = styled.div<AlertTitleUiProps>`
+    color: ${({ theme, $type, $solid }) => theme.alert[$type][`color${$solid ? 'Solid' : ''}`]};
+    font-size: ${({ theme }) => theme.alert.title.fontSize};
+    font-weight: ${({ theme }) => theme.alert.title.fontWeight};
+    margin-bottom: 8px;
+`;
 
-        ${IconUi} {
-            fill: ${theme.alert[solid ? 'solid' : 'default'].colorInfo};
-        }
-    `};
+export const AlertTextUi = styled.div<AlertTextUiProps>`
+    color: ${({ theme, $type, $solid }) => theme.alert[$type][`color${$solid ? 'Solid' : ''}`]};
+    font-size: ${({ theme }) => theme.alert.text.fontSize};
+`;
 
-    ${({ theme, type, solid }) => type === 'danger' && css`
-        background-color: ${theme.alert[solid ? 'solid' : 'default'].backgroundColorDanger};
-        border-color: ${theme.alert[solid ? 'solid' : 'default'].colorDanger};
-        color: ${theme.alert[solid ? 'solid' : 'default'].colorDanger};
-    
-        ${IconUi} {
-            fill: ${theme.alert[solid ? 'solid' : 'default'].colorDanger};
-        }
-    `};
+export const AlertIconUi = styled.div<AlertIconUiProps>`
+    flex: 0 0 auto;
+    margin-left: 10px;
 
     ${IconUi} {
-        margin-left: auto
+        cursor: pointer;
+        fill: ${({ theme, $type, $solid }) => theme.alert[$type][`color${$solid ? 'Solid' : ''}`]};
     }
 `;

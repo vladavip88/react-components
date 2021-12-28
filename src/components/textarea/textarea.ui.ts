@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
+import { startCase } from 'lodash';
 
 // Interfaces
-import { Props } from './textarea.d';
+import { TextareaUiProps } from './textarea.d';
 
 // eslint-disable-next-line import/prefer-default-export
-export const TextareaUi = styled.textarea<Props>`
+export const TextareaUi = styled.textarea<TextareaUiProps>`
     background-color: #FFFFFF;
     border: 1px solid ${({ theme }) => theme.textarea.borderColor};
     border-radius: ${({ theme }) => theme.textarea.borderRadius};
@@ -14,7 +15,7 @@ export const TextareaUi = styled.textarea<Props>`
     font-size: 1rem;
     line-height: 1.125rem;
     padding: ${({ theme }) => `${theme.textarea.paddingHorizontal} ${theme.textarea.paddingVertical}`};
-    resize: ${({ resizable }) => (resizable ? 'auto' : 'none')};
+    resize: ${({ $resizable }) => ($resizable ? 'auto' : 'none')};
     width: 100%;
 
     &:focus {
@@ -26,24 +27,11 @@ export const TextareaUi = styled.textarea<Props>`
         color: ${({ theme }) => theme.textarea.colorPlaceholder};
     }
 
-    ${({ error }) => error && css`
-        border-color: ${({ theme }) => theme.textarea.borderColorError};
+    ${({ $status }) => $status && css`
+        border-color: ${({ theme }) => theme.textarea[`borderColor${startCase($status)}`]};
+        
         &:focus {
-            border-color: ${({ theme }) => theme.textarea.borderColorError};
-        }
-    `};
-
-    ${({ success }) => success && css`
-        border-color: ${({ theme }) => theme.textarea.borderColorSuccess};
-        &:focus {
-            border-color: ${({ theme }) => theme.textarea.borderColorSuccess};
-        }
-    `};
-
-    ${({ warning }) => warning && css`
-        border-color: ${({ theme }) => theme.textarea.borderColorWarning};
-        &:focus {
-            border-color: ${({ theme }) => theme.textarea.borderColorWarning};
+            border-color: ${({ theme }) => theme.textarea[`borderColor${startCase($status)}`]};
         }
     `};
 `;
